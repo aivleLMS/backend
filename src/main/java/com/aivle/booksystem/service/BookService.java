@@ -1,7 +1,6 @@
 package com.aivle.booksystem.service;
 
 import com.aivle.booksystem.domain.Book;
-
 import java.util.List;
 
 public interface BookService {
