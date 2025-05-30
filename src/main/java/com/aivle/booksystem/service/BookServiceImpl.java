@@ -31,7 +31,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Book updateBook(Book book) {
+    public Book updateBook(Long id, Book book) {
         Book oldBook = findBookById(book.getId());
 
         oldBook.setTitle(book.getTitle());
