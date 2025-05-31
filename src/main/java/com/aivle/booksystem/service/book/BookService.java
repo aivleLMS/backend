@@ -1,4 +1,4 @@
-package com.aivle.booksystem.service;
+package com.aivle.booksystem.service.book;
 
 import com.aivle.booksystem.domain.Book;
 import java.util.List;
