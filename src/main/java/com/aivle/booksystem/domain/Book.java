@@ -1,5 +1,6 @@
 package com.aivle.booksystem.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -56,4 +57,9 @@ public class Book {
         SCIENCE, // 과학
         TRAVEL // 여행
     }
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    @JsonBackReference
+    private User user;
 }
