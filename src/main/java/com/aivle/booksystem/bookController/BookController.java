@@ -1,6 +1,6 @@
 package com.aivle.booksystem.bookController;
 
-import com.aivle.booksystem.service.book.BookService;
+import com.aivle.booksystem.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

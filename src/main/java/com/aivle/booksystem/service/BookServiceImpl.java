@@ -1,4 +1,4 @@
-package com.aivle.booksystem.service.book;
+package com.aivle.booksystem.service;
 
 import com.aivle.booksystem.domain.Book;
 import com.aivle.booksystem.repository.BookRepository;
