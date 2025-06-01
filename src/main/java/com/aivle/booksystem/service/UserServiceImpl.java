@@ -1,5 +1,5 @@
 package com.aivle.booksystem.service;
-//
+
 import com.aivle.booksystem.domain.User;
 import com.aivle.booksystem.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
     @Override
-    public User newUser(User user) {return userRepository.save(user);}
+    public User newUser(User users) {return userRepository.save(users);}
 
     @Override
     public User findUserById (Long id) {
@@ -29,10 +29,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User updateUser(Long id, User user) {
-        User oldUser = findUserById(user.getId());
+    public User updateUser(Long id, User users) {
+        User oldUser = findUserById(users.getId());
 
-        oldUser.setToken(user.getToken());
+        oldUser.setToken(users.getToken());
         return userRepository.save(oldUser);
     }
 

@@ -1,5 +1,4 @@
 package com.aivle.booksystem.dto;
-//
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
