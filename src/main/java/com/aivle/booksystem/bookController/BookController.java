@@ -8,7 +8,7 @@ import com.aivle.booksystem.domain.Book;
 import java.util.List;
 
 @RestController
-@RequestMapping("/books")
+@RequestMapping("/api/books")
 @RequiredArgsConstructor
 public class BookController {
 
