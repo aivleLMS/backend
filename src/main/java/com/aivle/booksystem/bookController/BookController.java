@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.*;
 import com.aivle.booksystem.domain.Book;
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000") // 프론트엔드 주소
 @RestController
 @RequestMapping("/books")
 @RequiredArgsConstructor
 public class BookController {
 
     private final BookService bookService;
-
 
     // 신규 도서 등록
     @PostMapping
