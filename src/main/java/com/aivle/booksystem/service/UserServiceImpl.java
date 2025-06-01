@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
     @Override
-    public User userName(User user) {return userRepository.save(user);}
+    public User newUser(User user) {return userRepository.save(user);}
 
     @Override
     public User findUserById (Long id) {
@@ -24,9 +24,18 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User checkToken(Long token) {
-        return null;
+        return userRepository.findById(token).orElseThrow(
+                () -> new EntityNotFoundException("Invalid token"));
     }
 
-    // 유저 삭제는?
+    @Override
+    public User updateUser(Long id, User user) {
+        User oldUser = findUserById(user.getId());
 
+        oldUser.setToken(user.getToken());
+        return userRepository.save(oldUser);
+    }
+
+    @Override
+    public void deleteUser(Long id) {userRepository.deleteById(id);}
 }

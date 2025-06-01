@@ -9,18 +9,25 @@ import com.aivle.booksystem.domain.User;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@RequestMapping("/users") // 확인필요
+@RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserController {
 
     private UserService userService;
 
     @PostMapping
-    public User userName(@RequestBody User user) {return userService.createUser(user);}
+    public User userName(@RequestBody User user) {return userService.newUser(user);}
 
     @GetMapping("/{id}")
     public User getUser(@PathVariable Long id) {return userService.findUserById(id);}
 
-    // 또 뭘 맵핑해야할까?
+    @GetMapping
+    public User getToken(@PathVariable Long token) {return userService.checkToken(token);}
 
+    @PutMapping("/{id}")
+    public User updateUser(@PathVariable Long id, @RequestBody User user){
+        return userService.updateUser(id, user);
+    }
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable Long id) {userService.deleteUser(id);}
 }
