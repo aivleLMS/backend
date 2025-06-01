@@ -1,4 +1,4 @@
-package com.aivle.booksystem.bookController;
+package com.aivle.booksystem.controller;
 
 
 import com.aivle.booksystem.service.UserService;

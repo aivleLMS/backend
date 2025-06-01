@@ -1,5 +1,5 @@
 package com.aivle.booksystem.service;
-
+//
 import com.aivle.booksystem.domain.User;
 
 public interface UserService {
