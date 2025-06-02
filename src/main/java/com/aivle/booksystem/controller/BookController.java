@@ -1,4 +1,4 @@
-package com.aivle.booksystem.bookController;
+package com.aivle.booksystem.controller;
 
 import com.aivle.booksystem.service.book.BookService;
 import lombok.RequiredArgsConstructor;
@@ -8,7 +8,7 @@ import com.aivle.booksystem.domain.Book;
 import java.util.List;
 
 @RestController
-@RequestMapping("/books")
+@RequestMapping("/api/books")
 @RequiredArgsConstructor
 public class BookController {
 

@@ -34,6 +34,7 @@ public class Book {
     @Enumerated(EnumType.STRING)
     private Book.Category category;
 
+    @Column(name = "book_cover_url", length = 1000)
     private String bookCoverUrl;
 
     @CreatedDate
