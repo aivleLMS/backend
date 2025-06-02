@@ -8,7 +8,7 @@ public interface UserService {
     User newUser(User user);
 
     // 유저 api key 받아오기
-    String getToken();
+    String getToken(Long id);
 
     // 사용자 조회
     User findUserById(Long id);

@@ -17,8 +17,8 @@ public class UserController {
     @PostMapping
     public User newUser(@RequestBody User user) {return userService.newUser(user);}
 
-    @GetMapping("token")
-    public String getToken() {return userService.getToken();}
+    @GetMapping("/{id}/token")
+    public String getToken(@PathVariable Long id) {return userService.getToken(id);}
 
     @GetMapping("/{id}")
     public User getUser(@PathVariable Long id) {return userService.findUserById(id);}

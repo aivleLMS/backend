@@ -20,8 +20,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String getToken() {
-        User user = userRepository.findById(1L).orElseThrow(() -> new UserNotFoundException("유저가 등록되어 있지 않습니다."));
+    public String getToken(Long id) {
+        User user = userRepository.findById(id).orElseThrow(() -> new UserNotFoundException("유저가 등록되어 있지 않습니다."));
         String token = user.getToken();
 
         if (token == null || token.isBlank()) {
