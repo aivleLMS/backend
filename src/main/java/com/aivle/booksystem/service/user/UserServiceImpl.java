@@ -1,6 +1,8 @@
 package com.aivle.booksystem.service.user;
 
 import com.aivle.booksystem.domain.User;
+import com.aivle.booksystem.exception.TokenNotFoundException;
+import com.aivle.booksystem.exception.UserNotFoundException;
 import com.aivle.booksystem.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -19,11 +21,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String getToken() {
-        User user = userRepository.findById(1L).orElseThrow(() -> new RuntimeException("User not found"));
+        User user = userRepository.findById(1L).orElseThrow(() -> new UserNotFoundException("유저가 등록되어 있지 않습니다."));
         String token = user.getToken();
 
-        if (token == null) {
-            throw new RuntimeException("Token not found");
+        if (token == null || token.isBlank()) {
+            throw new TokenNotFoundException("API key가 등록되어 있지 않습니다.");
         }
         return token;
     }
