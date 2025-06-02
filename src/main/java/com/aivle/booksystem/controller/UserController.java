@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 import com.aivle.booksystem.domain.User;
 
-@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/users")
 @RequiredArgsConstructor
